@@ -5,54 +5,54 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * Account
+ * InlineObject4
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-03-11T21:44:36.143+05:00[Asia/Karachi]")
-public class Account {
-  @JsonProperty("balance")
-  private Double balance = null;
+public class CreditsMercado {
+  @JsonProperty("accountId")
+  private Integer accountId;
 
-  @JsonProperty("active")
-  private Boolean active;
+  @JsonProperty("credits")
+  private Double credits;
 
-  public Account balance(Double balance) {
-    this.balance = balance;
+  public CreditsMercado accountId(Integer accountId) {
+    this.accountId = accountId;
     return this;
   }
 
   /**
-   * Get balance
-   * @return balance
+   * Get accountId
+   * @return accountId
   */
   @ApiModelProperty(value = "")
 
 
-  public Double getBalance() {
-    return balance;
+  public Integer getAccountId() {
+    return accountId;
   }
 
-  public void setBalance(Double balance) {
-    this.balance = balance;
+  public void setAccountId(Integer accountId) {
+    this.accountId = accountId;
   }
 
-  public Account active(Boolean active) {
-    this.active = active;
+  public CreditsMercado credits(Double credits) {
+    this.credits = credits;
     return this;
   }
 
   /**
-   * Get active
-   * @return active
+   * Get credits
+   * @return credits
   */
   @ApiModelProperty(value = "")
 
 
-  public Boolean getActive() {
-    return active;
+  public Double getCredits() {
+    return credits;
   }
 
-  public void setActive(Boolean active) {
-    this.active = active;
+  public void setCredits(Double credits) {
+    this.credits = credits;
   }
 
 
@@ -64,23 +64,23 @@ public class Account {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Account account = (Account) o;
-    return Objects.equals(this.balance, account.balance) &&
-        Objects.equals(this.active, account.active);
+    CreditsMercado creditsMercado = (CreditsMercado) o;
+    return Objects.equals(this.accountId, creditsMercado.accountId) &&
+        Objects.equals(this.credits, creditsMercado.credits);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(balance, active);
+    return Objects.hash(accountId, credits);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Account {\n");
+    sb.append("class InlineObject4 {\n");
     
-    sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    credits: ").append(toIndentedString(credits)).append("\n");
     sb.append("}");
     return sb.toString();
   }

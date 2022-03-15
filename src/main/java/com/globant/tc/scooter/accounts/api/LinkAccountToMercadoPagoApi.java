@@ -5,8 +5,8 @@
  */
 package com.globant.tc.scooter.accounts.api;
 
-import com.globant.tc.scooter.accounts.entity.MercadoPagoAccount;
-import com.globant.tc.scooter.accounts.model.InlineObject3;
+import com.globant.tc.scooter.accounts.entity.MercadoPagoAccountEntity;
+import com.globant.tc.scooter.accounts.model.linkAccountToMercadoPago;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -26,7 +26,7 @@ public interface LinkAccountToMercadoPagoApi {
     /**
      * POST /linkAccountToMercadoPago : Link account to mercado pago
      *
-     * @param inlineObject3  (required)
+     * @param linkAccountToMercadoPago  (required)
      * @return Operation success (status code 200)
      */
     @ApiOperation(value = "Link account to mercado pago", nickname = "linkAccountToMercadoPagoPost", notes = "", tags={  })
@@ -36,8 +36,8 @@ public interface LinkAccountToMercadoPagoApi {
         value = "/linkAccountToMercadoPago",
         consumes = { "application/json" }
     )
-    default ResponseEntity<MercadoPagoAccount> linkAccountToMercadoPagoPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody InlineObject3 inlineObject3) {
-        return getDelegate().linkAccountToMercadoPagoPost(inlineObject3);
+    default ResponseEntity<MercadoPagoAccountEntity> linkAccountToMercadoPagoPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody linkAccountToMercadoPago linkAccountToMercadoPago) {
+        return getDelegate().linkAccountToMercadoPagoPost(linkAccountToMercadoPago);
     }
 
 }

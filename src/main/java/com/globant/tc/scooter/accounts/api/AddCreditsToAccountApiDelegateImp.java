@@ -1,7 +1,7 @@
 package com.globant.tc.scooter.accounts.api;
 
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
-import com.globant.tc.scooter.accounts.model.InlineObject1;
+import com.globant.tc.scooter.accounts.model.CreditsToAccount;
 import com.globant.tc.scooter.accounts.repositories.AccountsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ public class AddCreditsToAccountApiDelegateImp implements AddCreditsToAccountApi
 
 
     @Override
-    public ResponseEntity<AccountEntity> addCreditsToAccountPost(InlineObject1 inlineObject1) {
+    public ResponseEntity<AccountEntity> addCreditsToAccountPost(CreditsToAccount inlineObject1) {
 
         AccountEntity account = new AccountEntity(
                 new Long(inlineObject1.getAccountId()),

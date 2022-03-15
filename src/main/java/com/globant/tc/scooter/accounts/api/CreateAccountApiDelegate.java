@@ -1,7 +1,7 @@
 package com.globant.tc.scooter.accounts.api;
 
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
-import com.globant.tc.scooter.accounts.model.InlineObject;
+import com.globant.tc.scooter.accounts.model.createAccountObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -22,12 +22,12 @@ public interface CreateAccountApiDelegate {
     /**
      * POST /createAccount : Create an Account and registered it to an user
      *
-     * @param inlineObject  (required)
+     * @param createAccountObject  (required)
      * @return Operation success (status code 200)
      *         or  (status code 503)
      * @see CreateAccountApi#createAccountPost
      */
-    default ResponseEntity<AccountEntity> createAccountPost(InlineObject inlineObject) {
+    default ResponseEntity<AccountEntity> createAccountPost(createAccountObject createAccountObject) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

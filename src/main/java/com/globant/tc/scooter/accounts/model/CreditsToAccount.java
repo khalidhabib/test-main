@@ -1,26 +1,22 @@
 package com.globant.tc.scooter.accounts.model;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+
+import java.util.Objects;
 
 /**
- * InlineObject3
+ * InlineObject1
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-03-11T21:44:36.143+05:00[Asia/Karachi]")
-public class InlineObject3   {
+public class CreditsToAccount {
   @JsonProperty("accountId")
   private Integer accountId;
 
-  @JsonProperty("mercadoPagoId")
-  private Integer mercadoPagoId;
+  @JsonProperty("credits")
+  private Double credits;
 
-  public InlineObject3 accountId(Integer accountId) {
+  public CreditsToAccount accountId(Integer accountId) {
     this.accountId = accountId;
     return this;
   }
@@ -40,24 +36,24 @@ public class InlineObject3   {
     this.accountId = accountId;
   }
 
-  public InlineObject3 mercadoPagoId(Integer mercadoPagoId) {
-    this.mercadoPagoId = mercadoPagoId;
+  public CreditsToAccount credits(Double credits) {
+    this.credits = credits;
     return this;
   }
 
   /**
-   * Get mercadoPagoId
-   * @return mercadoPagoId
+   * Get credits
+   * @return credits
   */
   @ApiModelProperty(value = "")
 
 
-  public Integer getMercadoPagoId() {
-    return mercadoPagoId;
+  public Double getCredits() {
+    return credits;
   }
 
-  public void setMercadoPagoId(Integer mercadoPagoId) {
-    this.mercadoPagoId = mercadoPagoId;
+  public void setCredits(Double credits) {
+    this.credits = credits;
   }
 
 
@@ -69,23 +65,23 @@ public class InlineObject3   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineObject3 inlineObject3 = (InlineObject3) o;
-    return Objects.equals(this.accountId, inlineObject3.accountId) &&
-        Objects.equals(this.mercadoPagoId, inlineObject3.mercadoPagoId);
+    CreditsToAccount inlineObject1 = (CreditsToAccount) o;
+    return Objects.equals(this.accountId, inlineObject1.accountId) &&
+        Objects.equals(this.credits, inlineObject1.credits);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, mercadoPagoId);
+    return Objects.hash(accountId, credits);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineObject3 {\n");
+    sb.append("class InlineObject1 {\n");
     
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    mercadoPagoId: ").append(toIndentedString(mercadoPagoId)).append("\n");
+    sb.append("    credits: ").append(toIndentedString(credits)).append("\n");
     sb.append("}");
     return sb.toString();
   }

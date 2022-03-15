@@ -1,7 +1,7 @@
 package com.globant.tc.scooter.accounts.api;
 
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
-import com.globant.tc.scooter.accounts.model.InlineObject;
+import com.globant.tc.scooter.accounts.model.createAccountObject;
 import com.globant.tc.scooter.accounts.repositories.AccountsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,11 +15,11 @@ public class CreateAccountApiDelegateImp implements CreateAccountApiDelegate {
     private AccountsRepository accountsRepository;
 
     @Override
-    public ResponseEntity<AccountEntity> createAccountPost(InlineObject inlineObject) {
+    public ResponseEntity<AccountEntity> createAccountPost(createAccountObject createAccountObject) {
         AccountEntity account = new AccountEntity(
                 null,
-                inlineObject.getAccount().getBalance(),
-                inlineObject.getAccount().getActive(),
+                createAccountObject.getAccount().getBalance(),
+                createAccountObject.getAccount().getActive(),
                 null
         );
         return new ResponseEntity<>(

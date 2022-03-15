@@ -6,7 +6,7 @@
 package com.globant.tc.scooter.accounts.api;
 
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
-import com.globant.tc.scooter.accounts.model.InlineObject1;
+import com.globant.tc.scooter.accounts.model.CreditsToAccount;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -37,7 +37,7 @@ public interface AddCreditsToAccountApi {
         value = "/addCreditsToAccount",
         consumes = { "application/json" }
     )
-    default ResponseEntity<AccountEntity> addCreditsToAccountPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody InlineObject1 inlineObject1) {
+    default ResponseEntity<AccountEntity> addCreditsToAccountPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody CreditsToAccount inlineObject1) {
         return getDelegate().addCreditsToAccountPost(inlineObject1);
     }
 

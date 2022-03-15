@@ -1,7 +1,7 @@
 package com.globant.tc.scooter.accounts.api;
 
-import com.globant.tc.scooter.accounts.entity.MercadoPagoAccount;
-import com.globant.tc.scooter.accounts.model.InlineObject3;
+import com.globant.tc.scooter.accounts.entity.MercadoPagoAccountEntity;
+import com.globant.tc.scooter.accounts.model.linkAccountToMercadoPago;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -22,11 +22,11 @@ public interface LinkAccountToMercadoPagoApiDelegate {
     /**
      * POST /linkAccountToMercadoPago : Link account to mercado pago
      *
-     * @param inlineObject3  (required)
+     * @param linkAccountToMercadoPago  (required)
      * @return Operation success (status code 200)
      * @see LinkAccountToMercadoPagoApi#linkAccountToMercadoPagoPost
      */
-    default ResponseEntity<MercadoPagoAccount> linkAccountToMercadoPagoPost(InlineObject3 inlineObject3) {
+    default ResponseEntity<MercadoPagoAccountEntity> linkAccountToMercadoPagoPost(linkAccountToMercadoPago linkAccountToMercadoPago) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

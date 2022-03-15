@@ -6,7 +6,7 @@
 package com.globant.tc.scooter.accounts.api;
 
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
-import com.globant.tc.scooter.accounts.model.InlineObject;
+import com.globant.tc.scooter.accounts.model.createAccountObject;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -27,7 +27,7 @@ public interface CreateAccountApi {
     /**
      * POST /createAccount : Create an Account and registered it to an user
      *
-     * @param inlineObject (required)
+     * @param createAccountObject (required)
      * @return Operation success (status code 200)
      * or  (status code 503)
      */
@@ -40,8 +40,8 @@ public interface CreateAccountApi {
             produces = {"application/json"},
             consumes = {"application/json"}
     )
-    default ResponseEntity<AccountEntity> createAccountPost(@ApiParam(value = "", required = true) @Valid @RequestBody InlineObject inlineObject) {
-        return getDelegate().createAccountPost(inlineObject);
+    default ResponseEntity<AccountEntity> createAccountPost(@ApiParam(value = "", required = true) @Valid @RequestBody createAccountObject createAccountObject) {
+        return getDelegate().createAccountPost(createAccountObject);
     }
 
 }

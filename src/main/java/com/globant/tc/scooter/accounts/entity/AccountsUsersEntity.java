@@ -17,7 +17,6 @@ public class AccountsUsersEntity {
 
     /**
      *
-     * @param id
      * @param idUser
      * @param idAccount
      */

@@ -1,7 +1,7 @@
 package com.globant.tc.scooter.accounts.api;
 
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
-import com.globant.tc.scooter.accounts.model.InlineObject1;
+import com.globant.tc.scooter.accounts.model.CreditsToAccount;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -27,7 +27,7 @@ public interface AddCreditsToAccountApiDelegate {
      * @return Operation success (status code 200)
      * @see AddCreditsToAccountApi#addCreditsToAccountPost
      */
-    default ResponseEntity<AccountEntity> addCreditsToAccountPost(InlineObject1 inlineObject1) {
+    default ResponseEntity<AccountEntity> addCreditsToAccountPost(CreditsToAccount inlineObject1) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

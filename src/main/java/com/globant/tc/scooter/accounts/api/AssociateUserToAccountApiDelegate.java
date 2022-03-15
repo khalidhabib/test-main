@@ -1,7 +1,7 @@
 package com.globant.tc.scooter.accounts.api;
 
 import com.globant.tc.scooter.accounts.entity.AccountsUsersEntity;
-import com.globant.tc.scooter.accounts.model.InlineObject2;
+import com.globant.tc.scooter.accounts.model.AssociateUserToAccount;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -22,11 +22,11 @@ public interface AssociateUserToAccountApiDelegate {
     /**
      * POST /associateUserToAccount : Associate User With An Account
      *
-     * @param inlineObject2  (required)
+     * @param associateUserToAccount  (required)
      * @return Operation success (status code 200)
      * @see AssociateUserToAccountApi#associateUserToAccountPost
      */
-    default ResponseEntity<AccountsUsersEntity> associateUserToAccountPost(InlineObject2 inlineObject2) {
+    default ResponseEntity<AccountsUsersEntity> associateUserToAccountPost(AssociateUserToAccount associateUserToAccount) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

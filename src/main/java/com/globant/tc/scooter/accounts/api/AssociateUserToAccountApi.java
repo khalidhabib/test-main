@@ -6,7 +6,7 @@
 package com.globant.tc.scooter.accounts.api;
 
 import com.globant.tc.scooter.accounts.entity.AccountsUsersEntity;
-import com.globant.tc.scooter.accounts.model.InlineObject2;
+import com.globant.tc.scooter.accounts.model.AssociateUserToAccount;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -26,7 +26,7 @@ public interface AssociateUserToAccountApi {
     /**
      * POST /associateUserToAccount : Associate User With An Account
      *
-     * @param inlineObject2  (required)
+     * @param associateUserToAccount  (required)
      * @return Operation success (status code 200)
      */
     @ApiOperation(value = "Associate User With An Account", nickname = "associateUserToAccountPost", notes = "", tags={  })
@@ -36,8 +36,8 @@ public interface AssociateUserToAccountApi {
         value = "/associateUserToAccount",
         consumes = { "application/json" }
     )
-    default ResponseEntity<AccountsUsersEntity> associateUserToAccountPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody InlineObject2 inlineObject2) {
-        return getDelegate().associateUserToAccountPost(inlineObject2);
+    default ResponseEntity<AccountsUsersEntity> associateUserToAccountPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody AssociateUserToAccount associateUserToAccount) {
+        return getDelegate().associateUserToAccountPost(associateUserToAccount);
     }
 
 }

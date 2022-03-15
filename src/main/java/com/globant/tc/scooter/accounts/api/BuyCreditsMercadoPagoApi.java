@@ -5,18 +5,14 @@
  */
 package com.globant.tc.scooter.accounts.api;
 
-import com.globant.tc.scooter.accounts.model.InlineObject4;
+import com.globant.tc.scooter.accounts.model.CreditsMercado;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
-import javax.validation.constraints.*;
-import java.util.List;
-import java.util.Map;
+
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-03-11T21:44:36.143+05:00[Asia/Karachi]")
 @Validated
 @Api(value = "buyCreditsMercadoPago", description = "the buyCreditsMercadoPago API")
@@ -29,7 +25,7 @@ public interface BuyCreditsMercadoPagoApi {
     /**
      * POST /buyCreditsMercadoPago : Buy credits in Mercado Pago
      *
-     * @param inlineObject4  (required)
+     * @param creditsMercado  (required)
      * @return Operation success (status code 200)
      */
     @ApiOperation(value = "Buy credits in Mercado Pago", nickname = "buyCreditsMercadoPagoPost", notes = "", tags={  })
@@ -39,8 +35,8 @@ public interface BuyCreditsMercadoPagoApi {
         value = "/buyCreditsMercadoPago",
         consumes = { "application/json" }
     )
-    default ResponseEntity<Void> buyCreditsMercadoPagoPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody InlineObject4 inlineObject4) {
-        return getDelegate().buyCreditsMercadoPagoPost(inlineObject4);
+    default ResponseEntity<Void> buyCreditsMercadoPagoPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody CreditsMercado creditsMercado) {
+        return getDelegate().buyCreditsMercadoPagoPost(creditsMercado);
     }
 
 }

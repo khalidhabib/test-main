@@ -1,22 +1,21 @@
 package com.globant.tc.scooter.accounts.model;
 
+import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.Objects;
-
 /**
- * InlineObject1
+ * InlineObject2
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-03-11T21:44:36.143+05:00[Asia/Karachi]")
-public class InlineObject1   {
+public class AssociateUserToAccount {
   @JsonProperty("accountId")
   private Integer accountId;
 
-  @JsonProperty("credits")
-  private Double credits;
+  @JsonProperty("userId")
+  private Integer userId;
 
-  public InlineObject1 accountId(Integer accountId) {
+  public AssociateUserToAccount accountId(Integer accountId) {
     this.accountId = accountId;
     return this;
   }
@@ -36,24 +35,24 @@ public class InlineObject1   {
     this.accountId = accountId;
   }
 
-  public InlineObject1 credits(Double credits) {
-    this.credits = credits;
+  public AssociateUserToAccount userId(Integer userId) {
+    this.userId = userId;
     return this;
   }
 
   /**
-   * Get credits
-   * @return credits
+   * Get userId
+   * @return userId
   */
   @ApiModelProperty(value = "")
 
 
-  public Double getCredits() {
-    return credits;
+  public Integer getUserId() {
+    return userId;
   }
 
-  public void setCredits(Double credits) {
-    this.credits = credits;
+  public void setUserId(Integer userId) {
+    this.userId = userId;
   }
 
 
@@ -65,23 +64,23 @@ public class InlineObject1   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineObject1 inlineObject1 = (InlineObject1) o;
-    return Objects.equals(this.accountId, inlineObject1.accountId) &&
-        Objects.equals(this.credits, inlineObject1.credits);
+    AssociateUserToAccount associateUserToAccount = (AssociateUserToAccount) o;
+    return Objects.equals(this.accountId, associateUserToAccount.accountId) &&
+        Objects.equals(this.userId, associateUserToAccount.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, credits);
+    return Objects.hash(accountId, userId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineObject1 {\n");
+    sb.append("class InlineObject2 {\n");
     
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    credits: ").append(toIndentedString(credits)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -3,7 +3,7 @@ package com.globant.tc.scooter.accounts.entity;
 import javax.persistence.*;
 
 @Entity
-public class MercadoPagoAccount {
+public class MercadoPagoAccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -11,12 +11,12 @@ public class MercadoPagoAccount {
     private Long accountId;
     private Long mercadoPagoId;
 
-    public MercadoPagoAccount( Long accountId, Long mercadoPagoId) {
+    public MercadoPagoAccountEntity(Long accountId, Long mercadoPagoId) {
         this.accountId = accountId;
         this.mercadoPagoId = mercadoPagoId;
     }
 
-    public MercadoPagoAccount() {
+    public MercadoPagoAccountEntity() {
     }
 
     public Long getAccountId() {
