@@ -1,5 +1,6 @@
 package com.globant.tc.scooter.accounts.serviceimp;
 
+import com.globant.tc.scooter.accounts.constant.Constant;
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
 import com.globant.tc.scooter.accounts.model.createAccountObject;
 import com.globant.tc.scooter.accounts.repositories.AccountsRepository;
@@ -23,8 +24,8 @@ public class CreateAccountApiDelegateImp implements CreateAccountApiDelegate {
                 createAccountObject.getAccount().getActive(),
                 null
         );
-        return new ResponseEntity<>(
-                accountsRepository.save(account), HttpStatus.OK
+        accountsRepository.save(account);
+        return new ResponseEntity(Constant.SuccessMessage, HttpStatus.OK
         );
 
     }

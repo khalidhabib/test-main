@@ -1,5 +1,6 @@
 package com.globant.tc.scooter.accounts.serviceimp;
 
+import com.globant.tc.scooter.accounts.constant.Constant;
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
 import com.globant.tc.scooter.accounts.model.CreditsToAccount;
 import com.globant.tc.scooter.accounts.repositories.AccountsRepository;
@@ -26,9 +27,7 @@ public class AddCreditsToAccountApiDelegateImp implements AddCreditsToAccountApi
                 null
         );
 
-        return new ResponseEntity<>(
-                accountsRepository.save(account), HttpStatus.OK
-        );
-
+        accountsRepository.save(account);
+        return new ResponseEntity(Constant.SuccessMessage, HttpStatus.OK);
     }
 }

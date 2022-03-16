@@ -1,6 +1,7 @@
 package com.globant.tc.scooter.accounts.serviceimp;
 
 import com.globant.tc.scooter.accounts.api.AssociateUserToAccountApi;
+import com.globant.tc.scooter.accounts.constant.Constant;
 import com.globant.tc.scooter.accounts.entity.AccountsUsersEntity;
 import com.globant.tc.scooter.accounts.model.AssociateUserToAccount;
 import com.globant.tc.scooter.accounts.repositories.AccountUsersRepository;
@@ -29,11 +30,8 @@ public class AssociateUserToAccountApiDelegateImp implements AssociateUserToAcco
                 new Long(associateUserToAccount.getUserId()),
                 new Long(associateUserToAccount.getAccountId())
         );
-
-        return new ResponseEntity<>(
-                accountUsersRepository.save(associateAccount), HttpStatus.OK
-        );
-
+        accountUsersRepository.save(associateAccount);
+        return new ResponseEntity(Constant.SuccessMessage, HttpStatus.OK);
     }
 
 }

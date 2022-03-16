@@ -1,6 +1,7 @@
 package com.globant.tc.scooter.accounts.serviceimp;
 
 import com.globant.tc.scooter.accounts.api.BuyCreditsMercadoPagoApi;
+import com.globant.tc.scooter.accounts.constant.Constant;
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
 import com.globant.tc.scooter.accounts.entity.MercadoPagoEntity;
 import com.globant.tc.scooter.accounts.model.CreditsMercado;
@@ -31,9 +32,9 @@ public class BuyCreditsMercadoPagoApiDelegateImp implements BuyCreditsMercadoPag
     public ResponseEntity<Void> buyCreditsMercadoPagoPost(CreditsMercado creditsMercado) {
         Optional<AccountEntity> account = accountsRepository.findById(new Long(creditsMercado.getAccountId()));
         if (!account.isPresent()) {
-            return new ResponseEntity("Account not found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity(Constant.NotFoundMessage, HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity("Operation success", HttpStatus.OK);
+        return new ResponseEntity(Constant.SuccessMessage, HttpStatus.OK);
 
     }
 

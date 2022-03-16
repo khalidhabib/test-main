@@ -1,6 +1,7 @@
 package com.globant.tc.scooter.accounts.serviceimp;
 
 import com.globant.tc.scooter.accounts.api.LinkAccountToMercadoPagoApi;
+import com.globant.tc.scooter.accounts.constant.Constant;
 import com.globant.tc.scooter.accounts.entity.MercadoPagoAccountEntity;
 import com.globant.tc.scooter.accounts.model.linkAccountToMercadoPago;
 import com.globant.tc.scooter.accounts.repositories.MercadoPagoAccountRepository;
@@ -29,9 +30,8 @@ public class LinkAccountToMercadoPagoApiDelegateImp implements LinkAccountToMerc
                 new Long(linkAccountToMercadoPago.getAccountId()),
                 new Long(linkAccountToMercadoPago.getMercadoPagoId())
         );
-
-        return new ResponseEntity<>(
-                mercadoPagoRepository.save(mercadoPagoAccountEntity), HttpStatus.OK);
+        mercadoPagoRepository.save(mercadoPagoAccountEntity);
+        return new ResponseEntity(Constant.SuccessMessage, HttpStatus.OK);
 
     }
 
