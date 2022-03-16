@@ -1,5 +1,7 @@
-package com.globant.tc.scooter.accounts.api;
+package com.globant.tc.scooter.accounts.services;
 
+import com.globant.tc.scooter.accounts.api.LinkAccountToMercadoPagoApi;
+import com.globant.tc.scooter.accounts.controllers.LinkAccountToMercadoPagoApiController;
 import com.globant.tc.scooter.accounts.entity.MercadoPagoAccountEntity;
 import com.globant.tc.scooter.accounts.model.linkAccountToMercadoPago;
 import org.springframework.http.HttpStatus;

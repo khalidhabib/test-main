@@ -1,8 +1,10 @@
-package com.globant.tc.scooter.accounts.api;
+package com.globant.tc.scooter.accounts.serviceimp;
 
+import com.globant.tc.scooter.accounts.api.LinkAccountToMercadoPagoApi;
 import com.globant.tc.scooter.accounts.entity.MercadoPagoAccountEntity;
 import com.globant.tc.scooter.accounts.model.linkAccountToMercadoPago;
 import com.globant.tc.scooter.accounts.repositories.MercadoPagoAccountRepository;
+import com.globant.tc.scooter.accounts.services.LinkAccountToMercadoPagoApiDelegate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

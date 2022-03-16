@@ -1,5 +1,7 @@
-package com.globant.tc.scooter.accounts.api;
+package com.globant.tc.scooter.accounts.controllers;
 
+import com.globant.tc.scooter.accounts.api.AddCreditsToAccountApi;
+import com.globant.tc.scooter.accounts.services.AddCreditsToAccountApiDelegate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Optional;

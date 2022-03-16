@@ -1,27 +1,31 @@
-package com.globant.tc.scooter.accounts.api;
+package com.globant.tc.scooter.accounts.serviceimp;
 
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
-import com.globant.tc.scooter.accounts.model.createAccountObject;
+import com.globant.tc.scooter.accounts.model.CreditsToAccount;
 import com.globant.tc.scooter.accounts.repositories.AccountsRepository;
+import com.globant.tc.scooter.accounts.services.AddCreditsToAccountApiDelegate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CreateAccountApiDelegateImp implements CreateAccountApiDelegate {
+public class AddCreditsToAccountApiDelegateImp implements AddCreditsToAccountApiDelegate {
 
     @Autowired
-    private AccountsRepository accountsRepository;
+    AccountsRepository accountsRepository;
+
 
     @Override
-    public ResponseEntity<AccountEntity> createAccountPost(createAccountObject createAccountObject) {
+    public ResponseEntity<AccountEntity> addCreditsToAccountPost(CreditsToAccount inlineObject1) {
+
         AccountEntity account = new AccountEntity(
-                null,
-                createAccountObject.getAccount().getBalance(),
-                createAccountObject.getAccount().getActive(),
+                new Long(inlineObject1.getAccountId()),
+                inlineObject1.getCredits(),
+                true,
                 null
         );
+
         return new ResponseEntity<>(
                 accountsRepository.save(account), HttpStatus.OK
         );

@@ -7,6 +7,7 @@ package com.globant.tc.scooter.accounts.api;
 
 import com.globant.tc.scooter.accounts.entity.AccountsUsersEntity;
 import com.globant.tc.scooter.accounts.model.AssociateUserToAccount;
+import com.globant.tc.scooter.accounts.services.AssociateUserToAccountApiDelegate;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;

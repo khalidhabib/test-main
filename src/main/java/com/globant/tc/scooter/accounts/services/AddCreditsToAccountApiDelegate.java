@@ -1,7 +1,9 @@
-package com.globant.tc.scooter.accounts.api;
+package com.globant.tc.scooter.accounts.services;
 
+import com.globant.tc.scooter.accounts.api.AddCreditsToAccountApi;
+import com.globant.tc.scooter.accounts.controllers.AddCreditsToAccountApiController;
 import com.globant.tc.scooter.accounts.entity.AccountEntity;
-import com.globant.tc.scooter.accounts.model.createAccountObject;
+import com.globant.tc.scooter.accounts.model.CreditsToAccount;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -9,25 +11,25 @@ import org.springframework.web.context.request.NativeWebRequest;
 import java.util.Optional;
 
 /**
- * A delegate to be called by the {@link CreateAccountApiController}}.
+ * A delegate to be called by the {@link AddCreditsToAccountApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-03-11T21:44:36.143+05:00[Asia/Karachi]")
-public interface CreateAccountApiDelegate {
+public interface AddCreditsToAccountApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
 
     /**
-     * POST /createAccount : Create an Account and registered it to an user
+     * POST /addCreditsToAccount : Add Credits To Account.
+     * Optional extended description in CommonMark or HTML.
      *
-     * @param createAccountObject  (required)
+     * @param inlineObject1  (required)
      * @return Operation success (status code 200)
-     *         or  (status code 503)
-     * @see CreateAccountApi#createAccountPost
+     * @see AddCreditsToAccountApi#addCreditsToAccountPost
      */
-    default ResponseEntity<AccountEntity> createAccountPost(createAccountObject createAccountObject) {
+    default ResponseEntity<AccountEntity> addCreditsToAccountPost(CreditsToAccount inlineObject1) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

@@ -1,4 +1,4 @@
-package com.globant.tc.scooter.accounts.api;
+package com.globant.tc.scooter.accounts.api.util;
 
 import org.springframework.web.context.request.NativeWebRequest;
 

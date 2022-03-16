@@ -1,8 +1,10 @@
-package com.globant.tc.scooter.accounts.api;
+package com.globant.tc.scooter.accounts.serviceimp;
 
+import com.globant.tc.scooter.accounts.api.AssociateUserToAccountApi;
 import com.globant.tc.scooter.accounts.entity.AccountsUsersEntity;
 import com.globant.tc.scooter.accounts.model.AssociateUserToAccount;
 import com.globant.tc.scooter.accounts.repositories.AccountUsersRepository;
+import com.globant.tc.scooter.accounts.services.AssociateUserToAccountApiDelegate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
