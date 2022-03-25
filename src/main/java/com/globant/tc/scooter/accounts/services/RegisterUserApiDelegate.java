@@ -1,14 +1,14 @@
 package com.globant.tc.scooter.accounts.services;
 
-import com.globant.tc.scooter.accounts.api.RegisterUserApi;
-import com.globant.tc.scooter.accounts.controllers.RegisterUserApiController;
-import com.globant.tc.scooter.accounts.entity.UserEntity;
-import com.globant.tc.scooter.accounts.model.User;
+import java.util.Optional;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.NativeWebRequest;
 
-import java.util.Optional;
+import com.globant.tc.scooter.accounts.api.RegisterUserApi;
+import com.globant.tc.scooter.accounts.controllers.RegisterUserApiController;
+import com.globant.tc.scooter.accounts.model.User;
 
 /**
  * A delegate to be called by the {@link RegisterUserApiController}}.
@@ -28,7 +28,7 @@ public interface RegisterUserApiDelegate {
      * @return OK (status code 200)
      * @see RegisterUserApi#registerUserPost
      */
-    default ResponseEntity<UserEntity> registerUserPost(User user) {
+    default ResponseEntity<?> registerUserPost(User user) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 

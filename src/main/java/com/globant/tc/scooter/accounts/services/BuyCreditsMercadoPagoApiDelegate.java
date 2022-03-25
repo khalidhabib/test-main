@@ -2,6 +2,7 @@ package com.globant.tc.scooter.accounts.services;
 
 import com.globant.tc.scooter.accounts.api.BuyCreditsMercadoPagoApi;
 import com.globant.tc.scooter.accounts.controllers.BuyCreditsMercadoPagoApiController;
+import com.globant.tc.scooter.accounts.entity.AccountEntity;
 import com.globant.tc.scooter.accounts.model.CreditsMercado;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,8 +28,8 @@ public interface BuyCreditsMercadoPagoApiDelegate {
      * @return Operation success (status code 200)
      * @see BuyCreditsMercadoPagoApi#buyCreditsMercadoPagoPost
      */
-    default ResponseEntity<Void> buyCreditsMercadoPagoPost(CreditsMercado creditsMercado) {
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    default ResponseEntity<?> buyCreditsMercadoPagoPost(CreditsMercado creditsMercado) {
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 

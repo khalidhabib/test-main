@@ -28,7 +28,7 @@ public interface LinkAccountToMercadoPagoApiDelegate {
      * @return Operation success (status code 200)
      * @see LinkAccountToMercadoPagoApi#linkAccountToMercadoPagoPost
      */
-    default ResponseEntity<MercadoPagoAccountEntity> linkAccountToMercadoPagoPost(linkAccountToMercadoPago linkAccountToMercadoPago) {
+    default ResponseEntity<?> linkAccountToMercadoPagoPost(linkAccountToMercadoPago linkAccountToMercadoPago) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

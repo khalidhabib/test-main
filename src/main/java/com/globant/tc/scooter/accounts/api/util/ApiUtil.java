@@ -1,19 +1,23 @@
+
 package com.globant.tc.scooter.accounts.api.util;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.NativeWebRequest;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class ApiUtil {
-    public static void setExampleResponse(NativeWebRequest req, String contentType, String example) {
-        try {
-            HttpServletResponse res = req.getNativeResponse(HttpServletResponse.class);
-            res.setCharacterEncoding("UTF-8");
-            res.addHeader("Content-Type", contentType);
-            res.getWriter().print(example);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+public class ApiUtil<T> {
+	public static void setExampleResponse(NativeWebRequest req, String contentType, String example) {
+		try {
+			HttpServletResponse res = req.getNativeResponse(HttpServletResponse.class);
+			res.setCharacterEncoding("UTF-8");
+			res.addHeader("Content-Type", contentType);
+			res.getWriter().print(example);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 }

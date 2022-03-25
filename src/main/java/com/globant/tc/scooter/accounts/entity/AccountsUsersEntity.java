@@ -3,6 +3,7 @@ package com.globant.tc.scooter.accounts.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+
 @Entity
 public class AccountsUsersEntity {
     @Id

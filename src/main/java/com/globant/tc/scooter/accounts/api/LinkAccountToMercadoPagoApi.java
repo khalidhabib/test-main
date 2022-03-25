@@ -37,7 +37,7 @@ public interface LinkAccountToMercadoPagoApi {
         value = "/linkAccountToMercadoPago",
         consumes = { "application/json" }
     )
-    default ResponseEntity<MercadoPagoAccountEntity> linkAccountToMercadoPagoPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody linkAccountToMercadoPago linkAccountToMercadoPago) {
+    default ResponseEntity<?> linkAccountToMercadoPagoPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody linkAccountToMercadoPago linkAccountToMercadoPago) {
         return getDelegate().linkAccountToMercadoPagoPost(linkAccountToMercadoPago);
     }
 

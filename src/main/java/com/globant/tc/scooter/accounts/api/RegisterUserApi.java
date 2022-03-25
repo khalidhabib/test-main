@@ -38,8 +38,8 @@ public interface RegisterUserApi {
         value = "/registerUser",
         consumes = { "application/json" }
     )
-    default HttpEntity<UserEntity> registerUserPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
-        return getDelegate().registerUserPost(user);
+    default HttpEntity<?> registerUserPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
+        return  getDelegate().registerUserPost(user);
     }
 
 }

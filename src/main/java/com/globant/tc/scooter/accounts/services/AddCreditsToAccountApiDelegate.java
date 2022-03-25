@@ -30,8 +30,7 @@ public interface AddCreditsToAccountApiDelegate {
      * @see AddCreditsToAccountApi#addCreditsToAccountPost
      */
     default ResponseEntity<AccountEntity> addCreditsToAccountPost(CreditsToAccount inlineObject1) {
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

@@ -29,7 +29,7 @@ public interface CreateAccountApiDelegate {
      *         or  (status code 503)
      * @see CreateAccountApi#createAccountPost
      */
-    default ResponseEntity<AccountEntity> createAccountPost(createAccountObject createAccountObject) {
+    default ResponseEntity<?> createAccountPost(createAccountObject createAccountObject) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

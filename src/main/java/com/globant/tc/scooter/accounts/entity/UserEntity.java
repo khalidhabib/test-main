@@ -49,6 +49,11 @@ public class UserEntity {
         this.id = id;
     }
 
+	public AccountEntity getBody() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
 

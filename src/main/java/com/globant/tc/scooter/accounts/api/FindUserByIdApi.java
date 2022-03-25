@@ -5,6 +5,7 @@
  */
 package com.globant.tc.scooter.accounts.api;
 
+import com.globant.tc.scooter.accounts.entity.UserEntity;
 import com.globant.tc.scooter.accounts.model.User;
 import com.globant.tc.scooter.accounts.services.FindUserByIdApiDelegate;
 import io.swagger.annotations.*;
@@ -36,7 +37,7 @@ public interface FindUserByIdApi {
         value = "/findUserById/{userId}",
         produces = { "application/json" }
     )
-    default ResponseEntity<User> findUserByIdUserIdGet(@Min(1L)@ApiParam(value = "id of the user",required=true) @PathVariable("userId") Long userId) {
+    default ResponseEntity<?> findUserByIdUserIdGet(@Min(1L)@ApiParam(value = "id of the user",required=true) @PathVariable("userId") Long userId) {
         return getDelegate().findUserByIdUserIdGet(userId);
     }
 

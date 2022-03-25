@@ -28,7 +28,7 @@ public interface AssociateUserToAccountApiDelegate {
      * @return Operation success (status code 200)
      * @see AssociateUserToAccountApi#associateUserToAccountPost
      */
-    default ResponseEntity<AccountsUsersEntity> associateUserToAccountPost(AssociateUserToAccount associateUserToAccount) {
+    default ResponseEntity<?> associateUserToAccountPost(AssociateUserToAccount associateUserToAccount) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

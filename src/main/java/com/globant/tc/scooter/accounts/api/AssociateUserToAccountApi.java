@@ -37,7 +37,7 @@ public interface AssociateUserToAccountApi {
         value = "/associateUserToAccount",
         consumes = { "application/json" }
     )
-    default ResponseEntity<AccountsUsersEntity> associateUserToAccountPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody AssociateUserToAccount associateUserToAccount) {
+    default ResponseEntity<?> associateUserToAccountPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody AssociateUserToAccount associateUserToAccount) {
         return getDelegate().associateUserToAccountPost(associateUserToAccount);
     }
 

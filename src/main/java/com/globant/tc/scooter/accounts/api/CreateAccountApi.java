@@ -5,15 +5,21 @@
  */
 package com.globant.tc.scooter.accounts.api;
 
-import com.globant.tc.scooter.accounts.entity.AccountEntity;
-import com.globant.tc.scooter.accounts.model.createAccountObject;
-import com.globant.tc.scooter.accounts.services.CreateAccountApiDelegate;
-import io.swagger.annotations.*;
+import javax.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
-import javax.validation.Valid;
+import com.globant.tc.scooter.accounts.model.createAccountObject;
+import com.globant.tc.scooter.accounts.services.CreateAccountApiDelegate;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-03-11T21:44:36.143+05:00[Asia/Karachi]")
 @Validated
@@ -41,7 +47,7 @@ public interface CreateAccountApi {
             produces = {"application/json"},
             consumes = {"application/json"}
     )
-    default ResponseEntity<AccountEntity> createAccountPost(@ApiParam(value = "", required = true) @Valid @RequestBody createAccountObject createAccountObject) {
+    default ResponseEntity<?> createAccountPost(@ApiParam(value = "", required = true) @Valid @RequestBody createAccountObject createAccountObject) {
         return getDelegate().createAccountPost(createAccountObject);
     }
 

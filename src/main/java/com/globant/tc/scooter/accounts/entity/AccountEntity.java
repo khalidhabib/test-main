@@ -7,24 +7,22 @@ import javax.persistence.*;
  */
 @Entity(name = "account")
 public class AccountEntity {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private Double balance = null;
     private Boolean active;
     private String mercadoPagoAccount;
 
     /**
      *
-     * @param id
      * @param balance
      * @param active
      * @param mercadoPagoAccount
      */
-    public AccountEntity(Long id, Double balance, Boolean active, String mercadoPagoAccount) {
-        this.id = id;
+    public AccountEntity(Double balance, Boolean active, String mercadoPagoAccount) {
         this.balance = balance;
         this.active = active;
         this.mercadoPagoAccount = mercadoPagoAccount;
@@ -35,13 +33,6 @@ public class AccountEntity {
 
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Double getBalance() {
         return balance;
@@ -66,6 +57,14 @@ public class AccountEntity {
 
     public void setMercadoPagoAccount(String mercadoPagoAccount) {
         this.mercadoPagoAccount = mercadoPagoAccount;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
 

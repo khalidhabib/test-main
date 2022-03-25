@@ -1,15 +1,15 @@
 package com.globant.tc.scooter.accounts.services;
 
-import com.globant.tc.scooter.accounts.api.util.ApiUtil;
-import com.globant.tc.scooter.accounts.api.FindUserByIdApi;
-import com.globant.tc.scooter.accounts.controllers.FindUserByIdApiController;
-import com.globant.tc.scooter.accounts.model.User;
+import java.util.Optional;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.NativeWebRequest;
 
-import java.util.Optional;
+import com.globant.tc.scooter.accounts.api.FindUserByIdApi;
+import com.globant.tc.scooter.accounts.controllers.FindUserByIdApiController;
+import com.globant.tc.scooter.accounts.entity.UserEntity;
 
 /**
  * A delegate to be called by the {@link FindUserByIdApiController}}.
@@ -29,16 +29,7 @@ public interface FindUserByIdApiDelegate {
      * @return OK (status code 200)
      * @see FindUserByIdApi#findUserByIdUserIdGet
      */
-    default ResponseEntity<User> findUserByIdUserIdGet(Long userId) {
-        getRequest().ifPresent(request -> {
-            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
-                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"preferredPayment\" : \"preferredPayment\", \"name\" : \"name\" }";
-                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
-                    break;
-                }
-            }
-        });
+    default ResponseEntity<?> findUserByIdUserIdGet(Long userId) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

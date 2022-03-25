@@ -5,6 +5,7 @@
  */
 package com.globant.tc.scooter.accounts.api;
 
+import com.globant.tc.scooter.accounts.entity.AccountEntity;
 import com.globant.tc.scooter.accounts.model.CreditsMercado;
 import com.globant.tc.scooter.accounts.services.BuyCreditsMercadoPagoApiDelegate;
 import io.swagger.annotations.*;
@@ -36,8 +37,8 @@ public interface BuyCreditsMercadoPagoApi {
         value = "/buyCreditsMercadoPago",
         consumes = { "application/json" }
     )
-    default ResponseEntity<Void> buyCreditsMercadoPagoPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody CreditsMercado creditsMercado) {
-        return getDelegate().buyCreditsMercadoPagoPost(creditsMercado);
+    default ResponseEntity<?> buyCreditsMercadoPagoPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody CreditsMercado creditsMercado) {
+        return  getDelegate().buyCreditsMercadoPagoPost(creditsMercado);
     }
 
 }
